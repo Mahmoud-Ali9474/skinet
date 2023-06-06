@@ -1,8 +1,9 @@
+using Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Specifications
 {
-    public class SpecificationEvalutor<T> where T : BaseSpecification<T>
+    public class SpecificationEvalutor<T> where T : BaseEntity
     {
         public static IQueryable<T> GetQuery(IQueryable<T> inputQuery, ISpecification<T> spec)
         {

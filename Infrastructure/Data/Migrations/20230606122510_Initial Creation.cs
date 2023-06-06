@@ -4,7 +4,7 @@
 
 namespace Infrastructure.Data.migrations
 {
-    public partial class IntialCreate : Migration
+    public partial class InitialCreation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,7 +43,7 @@ namespace Infrastructure.Data.migrations
                     Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     Description = table.Column<string>(type: "TEXT", maxLength: 180, nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
-                    PhotoUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    PictureUrl = table.Column<string>(type: "TEXT", nullable: true),
                     ProductTypeId = table.Column<int>(type: "INTEGER", nullable: false),
                     ProductBrandId = table.Column<int>(type: "INTEGER", nullable: false)
                 },

@@ -32,7 +32,7 @@ namespace Infrastructure.Data.migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PhotoUrl")
+                    b.Property<string>("PictureUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Price")

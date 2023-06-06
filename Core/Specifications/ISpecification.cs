@@ -12,9 +12,6 @@ namespace Core.Specifications
 
         List<Expression<Func<T, object>>> Includes { get; }
 
-        protected void AddInclude(Expression<Func<T, object>> includeExpression)
-        {
-            Includes.Add(includeExpression);
-        }
+
     }
 }
