@@ -9,9 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseApiController
     {
         private readonly IGenericRepository<Product> genericRepository;
         private readonly IMapper mapper;
@@ -25,6 +23,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetProducts()
         {
+            //throw new Exception("uihkj");
             var spec = new ProductsWithTypesAndBrandsSpecification();
             
             var products = await genericRepository.ListAsync(spec);
@@ -35,8 +34,9 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            var spec = new ProductsWithTypesAndBrandsSpecification();
+            var spec = new ProductsWithTypesAndBrandsSpecification(id);
             var product = await genericRepository.GetEntityWithSpecAsync(spec);
+            var x = product.Id;
             return Ok(mapper.Map<Product, ProductToReturnDto>(product));
         }
     }
