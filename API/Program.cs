@@ -41,6 +41,7 @@ using (var scope = app.Services.CreateScope())
         logger.LogError(ex, "Error occured during migration.");
     }
 }
+app.UseStatusCodePagesWithReExecute("/errors/{0}");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.MapControllers();
