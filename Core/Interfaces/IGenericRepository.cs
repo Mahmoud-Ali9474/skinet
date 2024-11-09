@@ -13,4 +13,5 @@ public interface IGenericRepository<TEntity> where TEntity : BaseEntity
     Task<IReadOnlyList<TEntity>> FindAllAsync();
     Task<IReadOnlyList<TEntity>> FindAsync(ISpecification<TEntity> spec);
     Task<TEntity> FindEntityWithSpec(ISpecification<TEntity> spec);
+    Task<int> CountAsync(ISpecification<TEntity> spec);
 }
