@@ -1,0 +1,21 @@
+<div
+  class="d-flex flex-column flex-md-row align-items-center justify-content-between p-2 px-md-3 mb-2 border-bottom fixed-top">
+  <a [routerLink]="['/']" class="d-flex align-items-center text-decoration-none">
+    <img src="/assets/images/logo.png" style="max-height: 50px;" alt="logo" class="logo">
+  </a>
+
+  <nav class="mt-2 mt-md-0 text-uppercase" style="font-size:larger;">
+    <a class="me-3 py-2 text-decoration-none" [routerLink]="['/']" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact:true}">Home</a>
+    <a class="me-3 py-2 text-decoration-none" [routerLink]="['/shop']" routerLinkActive="active">Shop</a>
+    <a class="me-3 py-2 text-decoration-none" href="#">Contact</a>
+  </nav>
+  <div class="d-flex align-items-center my-auto">
+    <a class="position-relative">
+      <i class="fa fa-shopping-cart fa-lg text-dark me-5"></i>
+      <div class="cart-no">5</div>
+    </a>
+    <a class="btn btn-outline-secondary btn-sm me-2">Login</a>
+    <a class="btn btn-outline-secondary btn-sm me-2">Sign Up</a>
+  </div>
+</div>

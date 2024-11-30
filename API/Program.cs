@@ -27,6 +27,7 @@ builder.Services.AddCors(options =>
 });
 var app = builder.Build();
 // Configure the HTTP request pipeline.
+app.UseStaticFiles();
 app.UseMiddleware<ExceptionMiddleware>();
 if (app.Environment.IsDevelopment())
 {
@@ -36,7 +37,7 @@ if (app.Environment.IsDevelopment())
 await app.ApplyMigrations<StoreContext>();
 app.UseStatusCodePagesWithReExecute("/errors/{0}");
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+
 app.UseCors("CorsPolicy");
 app.MapControllers();
 

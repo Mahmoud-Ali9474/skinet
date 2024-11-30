@@ -1,0 +1,14 @@
+<header class="mt-2">
+  <span *ngIf="totalItemCount > 0">
+    showing
+    <strong>{{(pageNumber -1) * pageSize + 1}} - {{ pageNumber *
+      pageSize > totalItemCount? totalItemCount : pageNumber *
+      pageSize}}</strong>
+    of
+    <strong>{{totalItemCount}}</strong>
+    Results
+  </span>
+  <span *ngIf="totalItemCount === 0">
+    There are 0 results for this filter.
+  </span>
+</header>

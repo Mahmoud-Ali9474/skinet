@@ -29,7 +29,7 @@ public class ProductSpecParams
     public string SearchTerm
     {
         get => _searchTerm;
-        set => _searchTerm?.ToLower();
+        set => _searchTerm = value?.ToLower();
     }
 
 }
